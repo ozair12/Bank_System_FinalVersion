@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac80412f-1f7c-4d6e-bf66-f8d140daa46b" name="Changes" comment="New commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="16ef8c52-8687-443c-9ff4-7340f40f9434" name="Changes" comment="New commit">
+      <changelist_data name="Ozair Haghdoust" email="ozair-haghdoust@outlook.com" />
+      <change beforePath="$PROJECT_DIR$/src/Main_Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/master" />
+    <option name="OPTIONS">
+      <set>
+        <option value="NO_FF" />
+      </set>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,7 +40,8 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

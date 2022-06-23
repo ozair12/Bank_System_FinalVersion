@@ -81,7 +81,7 @@ public class Main_Console {
             service = input.nextInt();
 
         }
-
+        System.out.println("New change");
 
     }
 
