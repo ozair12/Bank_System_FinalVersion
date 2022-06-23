@@ -38,6 +38,10 @@ public class Main_Console {
         isaAccounts.add(JSISA);
         isaAccounts.add(BJISA);
 
+// checking that there is only one person per account. For loop that goes through the names
+
+
+
         Scanner name = new Scanner(System.in);
 
         System.out.println("Enter the account sort code");
@@ -46,45 +50,59 @@ public class Main_Console {
         System.out.println("Enter the account number");
         int accountNumber = name.nextInt();
 
+
+
         System.out.println("Which service do you require");
-        System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money");
-        System.out.println("Enter 1 , 2, 3 or 4");
+        System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+        System.out.println("Enter 1 , 2, 3, 4 or 5");
 
         Scanner input = new Scanner(System.in);
         int service = input.nextInt();
-        if (service == 1){
-            System.out.println("Enter the amout you wish to deposit");
-            double amount = input.nextDouble();
-            method.DepositMoney(sortCode, accountNumber, amount, service);
 
-        } else if (service == 2){
-            System.out.println("Enter the amount you wish to withdraw");
-            double amount = input.nextDouble();
-            method.WithDrawMoney(sortCode, accountNumber, amount, service);
-        } else if (service == 3){
+        while(service < 1 || service > 5){
+            System.out.println("Enter a value between 1, 2, 3, 4 or 5");
+            service = input.nextInt();
+        }
+
+            while (service != 5) {
+                System.out.println("Enter the account sort code");
+                 sortCode = name.next();
+
+                System.out.println("Enter the account number");
+                 accountNumber = name.nextInt();
+                System.out.println("Which service do you require");
+                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+                System.out.println("Enter 1 , 2, 3, 4 or 5");
+
+                 service = input.nextInt();
+
+            if (service == 1) {
+                System.out.println("Enter the amout you wish to deposit");
+                double amount = input.nextDouble();
+                method.DepositMoney(sortCode, accountNumber, amount, service);
+
+            } else if (service == 2) {
+                System.out.println("Enter the amount you wish to withdraw");
+                double amount = input.nextDouble();
+                method.WithDrawMoney(sortCode, accountNumber, amount, service);
+            } else if (service == 3) {
 //            System.out.println("Enter the amount you wish to deposit");
 //            double amount = input.nextDouble();
-            method.CheckBalance(sortCode, accountNumber, service);
-        }else if (service == 4){
-            System.out.println("Enter the sort code of the account you want to transfer to: ");
-            String selectionSortCode = input.next();
-            System.out.println("Enter the account number you wish to deposit to: ");
-            int selectionAccountNo = input.nextInt();
-            System.out.println("Enter the amount you wish to deposit");
-            double amount = input.nextDouble();
-            method.TransferMoney(sortCode, accountNumber, amount, service, selectionSortCode, selectionAccountNo);
+                method.CheckBalance(sortCode, accountNumber, service);
+            } else if (service == 4) {
+                System.out.println("Enter the sort code of the account you want to transfer to: ");
+                String selectionSortCode = input.next();
+                System.out.println("Enter the account number you wish to deposit to: ");
+                int selectionAccountNo = input.nextInt();
+                System.out.println("Enter the amount you wish to deposit");
+                double amount = input.nextDouble();
+                method.TransferMoney(sortCode, accountNumber, amount, service, selectionSortCode, selectionAccountNo);
+            }
         }
 
-
-        while(service < 1 || service > 4){
-            System.out.println("Enter a value between 1, 2, 3 or 4");
-            service = input.nextInt();
-
         }
-        System.out.println("New change");
-
     }
 
-}
+
 
 
