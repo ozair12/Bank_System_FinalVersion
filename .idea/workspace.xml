@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-<<<<<<< HEAD
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
-=======
->>>>>>> 5fa03fdc42471b0dc56a633fb140f4c76e7adc9a
   <component name="ChangeListManager">
     <list default="true" id="ac80412f-1f7c-4d6e-bf66-f8d140daa46b" name="Changes" comment="New commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -16,14 +10,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-<<<<<<< HEAD
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="Ozair Haghdoust &lt;ozair-haghdoust@outlook.com&gt;" />
-      </list>
-    </option>
-=======
->>>>>>> 5fa03fdc42471b0dc56a633fb140f4c76e7adc9a
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,20 +28,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-<<<<<<< HEAD
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
-=======
     "WebServerToolWindowFactoryState": "false"
->>>>>>> 5fa03fdc42471b0dc56a633fb140f4c76e7adc9a
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,47 +39,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655986105682</updated>
-<<<<<<< HEAD
-      <workItem from="1655986107216" duration="175000" />
-      <workItem from="1655990121970" duration="701000" />
-    </task>
-    <task id="LOCAL-00001" summary="New commit">
-      <created>1655990413289</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990413289</updated>
-    </task>
-    <task id="LOCAL-00002" summary="New commit">
-      <created>1655990440350</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990440350</updated>
-    </task>
-    <task id="LOCAL-00003" summary="New commit">
-      <created>1655990465410</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990465410</updated>
-    </task>
-    <task id="LOCAL-00004" summary="New commit">
-      <created>1655990537550</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990537550</updated>
-    </task>
-    <task id="LOCAL-00005" summary="New commit">
-      <created>1655990551650</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1655990551650</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
-=======
       <workItem from="1655986107216" duration="1259000" />
     </task>
     <task id="LOCAL-00001" summary="New commit">
@@ -117,7 +49,6 @@
       <updated>1655986355874</updated>
     </task>
     <option name="localTasksCounter" value="2" />
->>>>>>> 5fa03fdc42471b0dc56a633fb140f4c76e7adc9a
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,23 +59,7 @@
       <map>
         <entry key="MAIN">
           <value>
-<<<<<<< HEAD
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/maria" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-=======
             <State />
->>>>>>> 5fa03fdc42471b0dc56a633fb140f4c76e7adc9a
           </value>
         </entry>
       </map>
