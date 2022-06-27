@@ -1,6 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main_Console {
@@ -8,7 +9,9 @@ public class Main_Console {
     protected static ArrayList<CurrentAccount> Currentacc = new ArrayList<>();
     protected static ArrayList<BusinessAccount> businessAccounts = new ArrayList<>();
     protected static ArrayList<ISAAccount> isaAccounts = new ArrayList<>();
-    public static void main(String[]args){
+
+    public static void main(String[] args) {
+
 
 
         Acc_Methods method = new Acc_Methods();
@@ -21,12 +24,12 @@ public class Main_Console {
         currentAcc.setSortCode("123456");
         isaAccount.setSortCode("456789");
 
-        CurrentAccount JSCA=new CurrentAccount("Jon Smith",currentAcc.getSortCode(),87654321,1000.00);
-        CurrentAccount BJCA=new CurrentAccount("Boris Johnson",currentAcc.getSortCode(),87654324,0.00);
-        BusinessAccount JSBA= new BusinessAccount("Jon Smith",businessAccount.getSortCode(),97531864,10000.00, true);
-        BusinessAccount BJBA =new BusinessAccount("Boris Johnson", businessAccount.getSortCode(),95498621,1000.0, true);
-        ISAAccount JSISA =new ISAAccount("Jon Smith", isaAccount.getSortCode(), 12345678,90.00);
-        ISAAccount BJISA=new ISAAccount("Boris Johnson",isaAccount.getSortCode(),99655642,1000.0);
+        CurrentAccount JSCA = new CurrentAccount("Jon Smith", currentAcc.getSortCode(), 87654321, 1000.00);
+        CurrentAccount BJCA = new CurrentAccount("Boris Johnson", currentAcc.getSortCode(), 87654324, 0.00);
+        BusinessAccount JSBA = new BusinessAccount("Jon Smith", businessAccount.getSortCode(), 97531864, 10000.00, true);
+        BusinessAccount BJBA = new BusinessAccount("Boris Johnson", businessAccount.getSortCode(), 95498621, 1000.0, true);
+        ISAAccount JSISA = new ISAAccount("Jon Smith", isaAccount.getSortCode(), 12345678, 90.00);
+        ISAAccount BJISA = new ISAAccount("Boris Johnson", isaAccount.getSortCode(), 99655642, 1000.0);
 
 
         businessAccounts.add(JSBA);
@@ -41,22 +44,36 @@ public class Main_Console {
 // checking that there is only one person per account. For loop that goes through the names
 
 
-
         Scanner name = new Scanner(System.in);
 
         System.out.println("Enter the account sort code");
         String sortCode = name.next();
 
-        System.out.println("Enter the account number");
-        int accountNumber = name.nextInt();
+
+        while (!sortCode.equals(isaAccount.getSortCode()) && (!sortCode.equals(currentAcc.getSortCode())) && (!sortCode.equals(businessAccount.getSortCode()))) {
+            System.out.println("Sort code incorrect , No such sort code exists");
+            System.out.println("Enter the account sort code");
+            sortCode = name.next();
+        }
+        Scanner account = new Scanner(System.in);
+
+        System.out.println("Enter the account number, must only be 8 digits");
+        int accountNumber = account.nextInt();
 
 
+
+ArrayListChecks(sortCode, accountNumber);
+
+
+
+
+
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Which service do you require");
         System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
         System.out.println("Enter 1 , 2, 3, 4 or 5");
 
-        Scanner input = new Scanner(System.in);
         int service = input.nextInt();
 
         while(service < 1 || service > 5){
@@ -64,22 +81,18 @@ public class Main_Console {
             service = input.nextInt();
         }
 
-            while (service != 5) {
-                System.out.println("Enter the account sort code");
-                 sortCode = name.next();
 
-                System.out.println("Enter the account number");
-                 accountNumber = name.nextInt();
-                System.out.println("Which service do you require");
-                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
-                System.out.println("Enter 1 , 2, 3, 4 or 5");
-
-                 service = input.nextInt();
+        while (service != 5) {
 
             if (service == 1) {
                 System.out.println("Enter the amout you wish to deposit");
                 double amount = input.nextDouble();
                 method.DepositMoney(sortCode, accountNumber, amount, service);
+                System.out.println("Which service do you require");
+                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+                System.out.println("Enter 1 , 2, 3, 4 or 5");
+                 input = new Scanner(System.in);
+                 service = input.nextInt();
 
             } else if (service == 2) {
                 System.out.println("Enter the amount you wish to withdraw");
@@ -101,6 +114,102 @@ public class Main_Console {
         }
 
         }
+
+
+public static void ArrayListChecks(String sortCode , int accountNumber){
+Scanner account = new Scanner(System.in);
+
+    if (sortCode.equals("123456")) {
+
+        Boolean bool = false;
+
+        for (int i = 0; i < Currentacc.toArray().length; i++) {
+            if (accountNumber != Currentacc.get(i).getAccountNumber()) {
+                bool = false;
+            } else {
+                bool = true;
+                break;
+            }
+        }
+        while (bool == false) {
+            System.out.println("Account number does not exist");
+            System.out.println("Enter the account number");
+
+            accountNumber = account.nextInt();
+
+            for (int i = 0; i < Currentacc.toArray().length; i++) {
+                if (accountNumber != Currentacc.get(i).getAccountNumber()) {
+                    bool = false;
+                } else {
+                    bool = true;
+                    break;
+                }
+            }
+        }
+
+    } else if (sortCode.equals("098765")) {
+
+        Boolean bool = false;
+
+        for (int i = 0; i < businessAccounts.toArray().length; i++) {
+            if (accountNumber != businessAccounts.get(i).getAccountNumber()) {
+                bool = false;
+            } else {
+                bool = true;
+                break;
+            }
+        }
+        while (bool == false) {
+            System.out.println("Account number does not exist");
+            System.out.println("Enter the account number");
+
+            accountNumber = account.nextInt();
+
+            for (int i = 0; i < businessAccounts.toArray().length; i++) {
+                if (accountNumber != businessAccounts.get(i).getAccountNumber()) {
+                    bool = false;
+                } else {
+                    bool = true;
+                    break;
+                }
+            }
+        }
+
+
+    }else if(sortCode.equals("456789")){
+
+        Boolean bool = false;
+
+        for (int i = 0; i < isaAccounts.toArray().length; i++) {
+            if (accountNumber != isaAccounts.get(i).getAccountNumber()) {
+                bool = false;
+            } else {
+                bool = true;
+                break;
+            }
+        }
+        while (bool == false) {
+            System.out.println("Account number does not exist");
+            System.out.println("Enter the account number");
+
+            accountNumber = account.nextInt();
+
+            for (int i = 0; i < isaAccounts.toArray().length; i++) {
+                if (accountNumber != isaAccounts.get(i).getAccountNumber()) {
+                    bool = false;
+                } else {
+                    bool = true;
+                    break;
+                }
+            }
+        }
+
+
+
+    }
+
+
+}
     }
 
 

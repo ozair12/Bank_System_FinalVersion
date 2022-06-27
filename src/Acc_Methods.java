@@ -34,7 +34,6 @@ public class Acc_Methods extends Main_Console {
                 case "123456":
                     for (int i = 0; i < main1.Currentacc.toArray().length; i++) {
                         if (Currentacc.get(i).getAccountNumber() == accountNumber) {
-
                             double totalAmount = amount + Currentacc.get(i).getBalance();
                             Currentacc.get(i).setBalance(totalAmount);
                             System.out.println("The amount is: " + Currentacc.get(i).getBalance());
@@ -73,16 +72,22 @@ public class Acc_Methods extends Main_Console {
                 case "123456":
                     for (int i = 0; i < main1.Currentacc.toArray().length; i++) {
                         if (Currentacc.get(i).getAccountNumber() == accountNumber) {
-                            if (Currentacc.get(i).getBalance() == Currentacc.get(i).getBalance() || Currentacc.get(i).getBalance() < Currentacc.get(i).getBalance()) {
-                                System.out.println("Customer can not withdraw more money than they already have in their balance");
+                            if (Currentacc.get(i).getBalance() != amount || Currentacc.get(i).getBalance() < amount) {
+                                double totalAmount = Currentacc.get(i).getBalance() - amount;
+                                Currentacc.get(i).setBalance(totalAmount);
+                                System.out.println("The amount is: " + Currentacc.get(i).getBalance());
+                                System.out.println(Currentacc.get(i).getAccountNumber());
+
+                            }else{
+                                System.out.println("Can not withdraw money");
+                                System.out.println("Insufficient account balance ");
                                 System.out.println(Currentacc.get(i).getName() + "has " + Currentacc.get(i).getBalance());
+
                             }
 
-                            double totalAmount = Currentacc.get(i).getBalance() - amount;
-                            Currentacc.get(i).setBalance(totalAmount);
-                            System.out.println("The amount is: " + Currentacc.get(i).getBalance());
-
                         }
+
+
                     }
                     break;
 
