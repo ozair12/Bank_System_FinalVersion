@@ -9,7 +9,8 @@ public class CurrentAccount extends Account implements Serializable {
     public CurrentAccount() {
 
     }
-    public void setSortCode(){
+
+    public void setSortCode() {
 
     }
 

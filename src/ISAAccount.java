@@ -1,23 +1,25 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class ISAAccount extends Account{
+public class ISAAccount extends Account {
 
 
     LocalDate localDate;
     String date;
-    public void setLocalDate(LocalDate localDate){
+
+    public void setLocalDate(LocalDate localDate) {
         this.localDate = localDate;
     }
-    public LocalDate getLocalDate(){
+
+    public LocalDate getLocalDate() {
         return localDate;
     }
 
-    public void  setDate(String date){
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public String getDate(){
+    public String getDate() {
         return date;
     }
 
@@ -29,14 +31,11 @@ public class ISAAccount extends Account{
     public ISAAccount() {
 
 
-
-
-    }
-    public ISAAccount(String name, String sortCode, int accountNumber, double balance , LocalDate localDate){
-
     }
 
+    public ISAAccount(String name, String sortCode, int accountNumber, double balance, LocalDate localDate) {
 
+    }
 
 
 }
