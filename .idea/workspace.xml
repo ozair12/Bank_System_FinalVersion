@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac80412f-1f7c-4d6e-bf66-f8d140daa46b" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/accData.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Acc_Methods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CurrentAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrentAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ISAAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISAAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main_Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +48,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Interest">
+  <component name="RunManager" selected="Application.Main_Console">
     <configuration name="Interest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Interest" />
       <module name="Bank_System_FinalVersion" />
@@ -66,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Interest" />
         <item itemvalue="Application.Main_Console" />
+        <item itemvalue="Application.Interest" />
         <item itemvalue="Application.Stringarray" />
       </list>
     </recent_temporary>
@@ -81,6 +87,9 @@
       <option name="presentableId" value="Default" />
       <updated>1655986105682</updated>
       <workItem from="1655986107216" duration="2307000" />
+      <workItem from="1656406489304" duration="11733000" />
+      <workItem from="1656621998393" duration="1541000" />
+      <workItem from="1656671026686" duration="22962000" />
     </task>
     <task id="LOCAL-00001" summary="New commit">
       <created>1655986355874</created>
@@ -110,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656335725124</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1656372705862</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1656372705862</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,10 +1,14 @@
+import java.io.*;
+import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Random;
 import java.util.Scanner;
 
-public class Main_Console {
+public class Main_Console{
 
     protected static ArrayList<CurrentAccount> Currentacc = new ArrayList<>();
     protected static ArrayList<BusinessAccount> businessAccounts = new ArrayList<>();
@@ -14,15 +18,16 @@ public class Main_Console {
 
 
 
-        Acc_Methods method = new Acc_Methods();
-
+Account acc = new Account();
 
         CurrentAccount currentAcc = new CurrentAccount();
         BusinessAccount businessAccount = new BusinessAccount();
         ISAAccount isaAccount = new ISAAccount();
+
         businessAccount.setSortCode("098765");
         currentAcc.setSortCode("123456");
         isaAccount.setSortCode("456789");
+
 
         CurrentAccount JSCA = new CurrentAccount("Jon Smith", currentAcc.getSortCode(), 87654321, 1000.00);
         CurrentAccount BJCA = new CurrentAccount("Boris Johnson", currentAcc.getSortCode(), 87654324, 0.00);
@@ -30,7 +35,6 @@ public class Main_Console {
         BusinessAccount BJBA = new BusinessAccount("Boris Johnson", businessAccount.getSortCode(), 95498621, 1000.0, true);
         ISAAccount JSISA = new ISAAccount("Jon Smith", isaAccount.getSortCode(), 12345678, 90.00);
         ISAAccount BJISA = new ISAAccount("Boris Johnson", isaAccount.getSortCode(), 99655642, 1000.0);
-
 
         businessAccounts.add(JSBA);
         businessAccounts.add(BJBA);
@@ -41,15 +45,17 @@ public class Main_Console {
         isaAccounts.add(JSISA);
         isaAccounts.add(BJISA);
 
-// checking that there is only one person per account. For loop that goes through the names
+   //     Interestcalc();
 
+        acc.AddingInterest();
+acc.AnnualCharge();
+
+// checking that there is only one person per account. For loop that goes through the names
 
         Scanner name = new Scanner(System.in);
 
         System.out.println("Enter the account sort code");
         String sortCode = name.next();
-
-
         while (!sortCode.equals(isaAccount.getSortCode()) && (!sortCode.equals(currentAcc.getSortCode())) && (!sortCode.equals(businessAccount.getSortCode()))) {
             System.out.println("Sort code incorrect , No such sort code exists");
             System.out.println("Enter the account sort code");
@@ -67,13 +73,12 @@ ArrayListChecks(sortCode, accountNumber);
 
 
 
-
         Scanner input = new Scanner(System.in);
 
         System.out.println("Which service do you require");
         System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
         System.out.println("Enter 1 , 2, 3, 4 or 5");
-
+System.out.println();
         int service = input.nextInt();
 
         while(service < 1 || service > 5){
@@ -85,9 +90,9 @@ ArrayListChecks(sortCode, accountNumber);
         while (service != 5) {
 
             if (service == 1) {
-                System.out.println("Enter the amout you wish to deposit");
+                System.out.println("Enter the amount you wish to deposit");
                 double amount = input.nextDouble();
-                method.DepositMoney(sortCode, accountNumber, amount, service);
+                acc.DepositMoney(sortCode, accountNumber, amount, service);
                 System.out.println("Which service do you require");
                 System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
                 System.out.println("Enter 1 , 2, 3, 4 or 5");
@@ -97,11 +102,19 @@ ArrayListChecks(sortCode, accountNumber);
             } else if (service == 2) {
                 System.out.println("Enter the amount you wish to withdraw");
                 double amount = input.nextDouble();
-                method.WithDrawMoney(sortCode, accountNumber, amount, service);
+                acc.WithDrawMoney(sortCode, accountNumber, amount, service);
+                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+                System.out.println("Enter 1 , 2, 3, 4 or 5");
+                input = new Scanner(System.in);
+                service = input.nextInt();
             } else if (service == 3) {
 //            System.out.println("Enter the amount you wish to deposit");
 //            double amount = input.nextDouble();
-                method.CheckBalance(sortCode, accountNumber, service);
+                acc.CheckBalance(sortCode, accountNumber, service);
+                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+                System.out.println("Enter 1 , 2, 3, 4 or 5");
+                input = new Scanner(System.in);
+                service = input.nextInt();
             } else if (service == 4) {
                 System.out.println("Enter the sort code of the account you want to transfer to: ");
                 String selectionSortCode = input.next();
@@ -109,9 +122,19 @@ ArrayListChecks(sortCode, accountNumber);
                 int selectionAccountNo = input.nextInt();
                 System.out.println("Enter the amount you wish to deposit");
                 double amount = input.nextDouble();
-                method.TransferMoney(sortCode, accountNumber, amount, service, selectionSortCode, selectionAccountNo);
+                acc.TransferMoney(sortCode, accountNumber, amount, service, selectionSortCode, selectionAccountNo);
+                System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
+                System.out.println("Enter 1 , 2, 3, 4 or 5");
+                input = new Scanner(System.in);
+                service = input.nextInt();
             }
         }
+
+
+
+
+
+
 
         }
 
@@ -210,7 +233,8 @@ Scanner account = new Scanner(System.in);
 
 
 }
-    }
+
+}
 
 
 
