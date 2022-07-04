@@ -45,12 +45,11 @@ Account acc = new Account();
         isaAccounts.add(JSISA);
         isaAccounts.add(BJISA);
 
-   //     Interestcalc();
-
+// method for calculating interest when 31 april is detected
         acc.AddingInterest();
-acc.AnnualCharge();
 
-// checking that there is only one person per account. For loop that goes through the names
+// business charge method will activate when the date has been met
+acc.AnnualCharge();
 
         Scanner name = new Scanner(System.in);
 

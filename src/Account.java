@@ -281,8 +281,9 @@ public class Account extends Main_Console{
         LocalDate CurrentDate = LocalDate.now();
         LocalDate PreSetDATE = LocalDate.of(2022, 5, 31);
         String presetDate = String.valueOf(PreSetDATE);
-        int month = PreSetDATE.getMonthValue();
-        int day = PreSetDATE.getDayOfMonth();
+        String currentdate = String.valueOf(CurrentDate);
+        int month = CurrentDate.getMonthValue();
+        int day = CurrentDate.getDayOfMonth();
         int year = PreSetDATE.getYear();
 
 
@@ -301,7 +302,7 @@ public class Account extends Main_Console{
         int avg = 0;
 
 
-        if (month == 5 && day == 31) {
+        if (currentdate.equals(presetDate)) {
             System.out.println("interest day");
             for (int i = 0; i < yearlyClosingBalance.length; i++) {
                 for (int k = 0; k < 366; k++) {
@@ -322,6 +323,8 @@ public class Account extends Main_Console{
                     avg = sum / 366;
                     Interest = avg * 0.02;
 
+
+
                 }
 
 
@@ -334,10 +337,22 @@ public class Account extends Main_Console{
             isaAccount.setDate("Interest added on " + " " + presetDate);
             System.out.println(isaAccount.getDate());
 
+            for(int i = 0; i < isaAccounts.toArray().length; i++){
+
+                if(isaAccounts.get(i).getAccountNumber() == yearlyClosingBalance[0][1]){
+                    double addingInterest = isaAccounts.get(i).getBalance() + Interest;
+                    isaAccounts.get(i).setBalance(addingInterest);
+                    System.out.println("Interest added to " + " " + isaAccounts.get(i).getName() + "Current ISA balance " + " " + isaAccounts.get(i).getBalance());
+                }
+
+            }
 
         }else {
             System.out.println("incorrect date");
         }
+
+
+
 
     }
 
@@ -347,8 +362,8 @@ public class Account extends Main_Console{
         LocalDate PreSetDATE = LocalDate.of(2022, 7, 04);
         String presetDate = String.valueOf(PreSetDATE);
         String currentdate = String.valueOf(CurrentDate);
-        int month = PreSetDATE.getMonthValue();
-        int day = PreSetDATE.getDayOfMonth();
+        int month = CurrentDate.getMonthValue();
+        int day = CurrentDate.getDayOfMonth();
         int year = PreSetDATE.getYear();
 
 double annualCharge = 25;
