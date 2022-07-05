@@ -45,10 +45,10 @@ public class Main_Console {
         isaAccounts.add(BJISA);
 
 // method for calculating interest when 31 april is detected
-        Account.AddingInterest();
+       // Account.AddingInterest();
 
 // business charge method will activate when the date has been met
-        Account.AnnualCharge();
+      //  Account.AnnualCharge();
 
         Scanner name = new Scanner(System.in);
 
