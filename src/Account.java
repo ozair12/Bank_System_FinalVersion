@@ -177,28 +177,39 @@ public class Account extends Main_Console {
                 for (int i = 0; i < Currentacc.toArray().length; i++) {
                     if (Currentacc.get(i).getAccountNumber() == accountNumber) {
 
-                        double totalAmount = Currentacc.get(i).getBalance() - amount;
+                        if (Currentacc.get(i).getBalance() < amount) {
+                            System.out.println("Insufficient funds in account, unable to transfer");
+
+                        } else {
+                            double totalAmount = Currentacc.get(i).getBalance() - amount;
 
 
-                        if (selectionSortCode.equals("456789")) {
-                            for (int y = 0; y < isaAccounts.toArray().length; y++) {
-                                if (selectionSortCode.equals(isaAccounts.get(y).getSortCode()) && selectionAccountNo == isaAccounts.get(y).getAccountNumber()) {
-                                    double transfer = amount + isaAccounts.get(y).getBalance();
-                                    isaAccounts.get(y).setBalance(transfer);
-                                    System.out.println("Your new ISA account balance is " + " " + isaAccounts.get(y).getName() + " " + "is: " + " " + isaAccounts.get(y).getBalance());
+                            if (selectionSortCode.equals("456789")) {
+                                for (int y = 0; y < isaAccounts.toArray().length; y++) {
+                                    if (selectionSortCode.equals(isaAccounts.get(y).getSortCode()) && selectionAccountNo == isaAccounts.get(y).getAccountNumber()) {
+                                        double transfer = amount + isaAccounts.get(y).getBalance();
+                                        isaAccounts.get(y).setBalance(transfer);
+                                        System.out.println("New ISA account balance for" + " " + isaAccounts.get(y).getName() + " " + "is: " + " " + isaAccounts.get(y).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + Currentacc.get(i).getName() + " " + " Current account ending in account number: " + " " + accountNumber + " " + "to" + " " + isaAccounts.get(y).getName() + " " + "  ISA account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+
+                                    }
                                 }
-                            }
 
-                        } else if (selectionSortCode.equals("098765")) {
-                            for (int j = 0; j < businessAccounts.toArray().length; j++) {
-                                if (selectionSortCode.equals(businessAccounts.get(j).getSortCode()) && selectionAccountNo == businessAccounts.get(j).getAccountNumber()) {
-                                    double transfer = amount + businessAccounts.get(j).getBalance();
-                                    businessAccounts.get(j).setBalance(transfer);
-                                    System.out.println("Your new Business account balance is " + " " + " " + businessAccounts.get(j).getName() + "is: " + " " + " " + businessAccounts.get(j).getBalance());
+                            } else if (selectionSortCode.equals("098765")) {
+                                for (int j = 0; j < businessAccounts.toArray().length; j++) {
+                                    if (selectionSortCode.equals(businessAccounts.get(j).getSortCode()) && selectionAccountNo == businessAccounts.get(j).getAccountNumber()) {
+                                        double transfer = amount + businessAccounts.get(j).getBalance();
+                                        businessAccounts.get(j).setBalance(transfer);
+                                        System.out.println("New Business account balance for" + " " + businessAccounts.get(j).getName() + "is: " + " " + " " + businessAccounts.get(j).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + Currentacc.get(i).getName() + " " + " Current account ending in account number: " + " " + accountNumber + " " + "to" + " " + businessAccounts.get(j).getName() + " " + "  Business account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+
+                                    }
                                 }
+
                             }
+                            //moved one bracket down
                             Currentacc.get(i).setBalance(totalAmount);
-                            System.out.println("The remaining balance in your current is" + Currentacc.get(i).getName() + " is: " + Currentacc.get(i).getBalance());
+                            System.out.println("The remaining balance in your current is" + " " + Currentacc.get(i).getName() + " is: " + Currentacc.get(i).getBalance());
                         }
                     }
                 }
@@ -207,30 +218,37 @@ public class Account extends Main_Console {
             case "098765":
                 for (int i = 0; i < businessAccounts.toArray().length; i++) {
                     if (businessAccounts.get(i).getAccountNumber() == accountNumber) {
+                        if (businessAccounts.get(i).getBalance() < amount) {
+                            System.out.println("Insufficient funds in account, unable to transfer");
 
-                        double totalAmount = businessAccounts.get(i).getBalance() - amount;
+                        } else {
+                            double totalAmount = businessAccounts.get(i).getBalance() - amount;
 
 
-                        if (selectionSortCode.equals("456789")) {
-                            for (int y = 0; y < isaAccounts.toArray().length; y++) {
-                                if (selectionSortCode.equals(isaAccounts.get(y).getSortCode()) && selectionAccountNo == isaAccounts.get(y).getAccountNumber()) {
-                                    double transfer = amount + isaAccounts.get(y).getBalance();
-                                    isaAccounts.get(y).setBalance(transfer);
-                                    System.out.println("The remaining balance in your ISA account is" + " " + isaAccounts.get(y) + " " + " is: " + " " + isaAccounts.get(y).getBalance());
+                            if (selectionSortCode.equals("456789")) {
+                                for (int y = 0; y < isaAccounts.toArray().length; y++) {
+                                    if (selectionSortCode.equals(isaAccounts.get(y).getSortCode()) && selectionAccountNo == isaAccounts.get(y).getAccountNumber()) {
+                                        double transfer = amount + isaAccounts.get(y).getBalance();
+                                        isaAccounts.get(y).setBalance(transfer);
+                                        System.out.println("New ISA account balance for" + " " + isaAccounts.get(y).getName() + "is: " + " " + " " + isaAccounts.get(y).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + businessAccounts.get(i).getName() + " " + " Business account ending in account number: " + " " + accountNumber + " " + "to" + " " + isaAccounts.get(y).getName() + " " + "  ISA account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+
+                                    }
                                 }
-                            }
-                            //businessAccounts.get(i).setBalance(totalAmount);
-                            //System.out.println("The amount in the business account for " + businessAccounts.get(i).getName() + " is: " + businessAccounts.get(i).getBalance());
-                        } else if (selectionSortCode.equals("123456")) {
-                            for (int j = 0; j < Currentacc.toArray().length; j++) {
-                                if (selectionSortCode.equals(Currentacc.get(j).getSortCode()) && selectionAccountNo == Currentacc.get(j).getAccountNumber()) {
-                                    double transfer = amount + Currentacc.get(j).getBalance();
-                                    Currentacc.get(j).setBalance(transfer);
-                                    System.out.println("The remaining balance in your Current account is" + " " + Currentacc.get(i).getName() + " " + " is: " + " " + Currentacc.get(j).getBalance());
+
+                            } else if (selectionSortCode.equals("123456")) {
+                                for (int j = 0; j < Currentacc.toArray().length; j++) {
+                                    if (selectionSortCode.equals(Currentacc.get(j).getSortCode()) && selectionAccountNo == Currentacc.get(j).getAccountNumber()) {
+                                        double transfer = amount + Currentacc.get(j).getBalance();
+                                        Currentacc.get(j).setBalance(transfer);
+                                        System.out.println("New Current account balance for" + " " + Currentacc.get(j).getName() + "is: " + " " + " " + Currentacc.get(j).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + businessAccounts.get(i).getName() + " " + " Business account ending in account number: " + " " + accountNumber + " " + "to" + " " + Currentacc.get(j).getName() + " " + "  Current account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+                                    }
                                 }
+
                             }
                             businessAccounts.get(i).setBalance(totalAmount);
-                            System.out.println("The remaining balance in your business is" + businessAccounts.get(i).getName() + " is: " + businessAccounts.get(i).getBalance());
+                            System.out.println("The remaining balance in your business is" + " " + businessAccounts.get(i).getName() + " " + " is: " + " " + businessAccounts.get(i).getBalance());
                         }
                     }
                 }
@@ -239,30 +257,38 @@ public class Account extends Main_Console {
             case "456789":
                 for (int i = 0; i < isaAccounts.toArray().length; i++) {
                     if (isaAccounts.get(i).getAccountNumber() == accountNumber) {
+                        if (isaAccounts.get(i).getBalance() < amount) {
+                            System.out.println("Insufficient funds in account, unable to transfer");
 
-                        double totalAmount = isaAccounts.get(i).getBalance() - amount;
+                        } else {
+                            double totalAmount = isaAccounts.get(i).getBalance() - amount;
 
 
-                        if (selectionSortCode.equals("123456")) {
-                            for (int y = 0; y < Currentacc.toArray().length; y++) {
-                                if (selectionSortCode.equals(Currentacc.get(y).getSortCode()) && selectionAccountNo == Currentacc.get(y).getAccountNumber()) {
-                                    double transfer = amount + Currentacc.get(y).getBalance();
-                                    Currentacc.get(y).setBalance(transfer);
-                                    System.out.println("The remaining balance in your Current account is" + " " + Currentacc.get(i).getName() + " " + " is: " + " " + Currentacc.get(y).getBalance());
+                            if (selectionSortCode.equals("123456")) {
+                                for (int y = 0; y < Currentacc.toArray().length; y++) {
+                                    if (selectionSortCode.equals(Currentacc.get(y).getSortCode()) && selectionAccountNo == Currentacc.get(y).getAccountNumber()) {
+                                        double transfer = amount + Currentacc.get(y).getBalance();
+                                        Currentacc.get(y).setBalance(transfer);
+                                        System.out.println("New ISA account balance for" + " " + Currentacc.get(y).getName() + "is: " + " " + " " + Currentacc.get(y).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + isaAccounts.get(i).getName() + " " + " ISA account ending in account number: " + " " + accountNumber + " " + "to" + " " + Currentacc.get(y).getName() + " " + "  Current account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+                                    }
                                 }
-                            }
-                            // isaAccounts.get(i).setBalance(totalAmount);
-                            // System.out.println("The amount in the ISA account for" + isaAccounts.get(i).getName() + " is: " + isaAccounts.get(i).getBalance());
-                        } else if (selectionSortCode.equals("098765")) {
-                            for (int j = 0; j < businessAccounts.toArray().length; j++) {
-                                if (selectionSortCode.equals(businessAccounts.get(j).getSortCode()) && selectionAccountNo == businessAccounts.get(j).getAccountNumber()) {
-                                    double transfer = amount + businessAccounts.get(j).getBalance();
-                                    businessAccounts.get(j).setBalance(transfer);
-                                    System.out.println("The remaining balance in your Current account is" + " " + isaAccounts.get(i).getName() + " " + " is: " + " " + businessAccounts.get(j).getBalance());
+
+                            } else if (selectionSortCode.equals("098765")) {
+                                for (int j = 0; j < businessAccounts.toArray().length; j++) {
+                                    if (selectionSortCode.equals(businessAccounts.get(j).getSortCode()) && selectionAccountNo == businessAccounts.get(j).getAccountNumber()) {
+                                        double transfer = amount + businessAccounts.get(j).getBalance();
+                                        businessAccounts.get(j).setBalance(transfer);
+                                        System.out.println("New Business account balance for" + " " + businessAccounts.get(j).getName() + "is: " + " " + " " + businessAccounts.get(j).getBalance());
+                                        System.out.println(amount + " " + "has been transferred from" + " " + isaAccounts.get(i).getName() + " " + " ISA account ending in account number: " + accountNumber + " " + "to" + " " + businessAccounts.get(j).getName() + " " + "  Business account ending in account number " + " " + selectionAccountNo + " " + "Sortcode" + " " + selectionSortCode);
+
+                                    }
                                 }
                             }
                             isaAccounts.get(i).setBalance(totalAmount);
-                            System.out.println("The amount in the ISA account for " + isaAccounts.get(i).getName() + " is: " + isaAccounts.get(i).getBalance());
+                            System.out.println("The amount in the ISA account for " + isaAccounts.get(i).getName() + " " + " is: " + " " + isaAccounts.get(i).getBalance());
+
+
                         }
                     }
                 }

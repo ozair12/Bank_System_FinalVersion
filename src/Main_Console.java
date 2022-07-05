@@ -73,7 +73,6 @@ public class Main_Console {
         System.out.println("Which service do you require");
         System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
         System.out.println("Enter 1 , 2, 3, 4 or 5");
-        System.out.println();
         int service = input.nextInt();
 
         while (service < 1 || service > 5) {
@@ -113,10 +112,18 @@ public class Main_Console {
             } else if (service == 4) {
                 System.out.println("Enter the sort code of the account you want to transfer to: ");
                 String selectionSortCode = input.next();
+                while (!selectionSortCode.equals(isaAccount.getSortCode()) && (!selectionSortCode.equals(currentAcc.getSortCode())) && (!selectionSortCode.equals(businessAccount.getSortCode()))) {
+                    System.out.println("Sort code incorrect , No such sort code exists");
+                    System.out.println("Enter the account sort code");
+                    selectionSortCode = input.next();
+                }
                 System.out.println("Enter the account number you wish to deposit to: ");
                 int selectionAccountNo = input.nextInt();
+                ArrayListChecks(selectionSortCode, selectionAccountNo);
                 System.out.println("Enter the amount you wish to deposit");
                 double amount = input.nextDouble();
+
+
                 Account.TransferMoney(sortCode, accountNumber, amount, service, selectionSortCode, selectionAccountNo);
                 System.out.println("1: Add money" + " " + "2: Withdraw money" + " " + "3:Check balance" + " " + "4:Transfer money" + " " + "Press 5 to exit");
                 System.out.println("Enter 1 , 2, 3, 4 or 5");
