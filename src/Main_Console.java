@@ -28,9 +28,9 @@ public class Main_Console {
         isaAccount.setSortCode("456789");
 
 
-        CurrentAccount JSCA = new CurrentAccount("Jon Smith", currentAcc.getSortCode(), 87654321, 1000.00);
-        CurrentAccount BJCA = new CurrentAccount("Boris Johnson", currentAcc.getSortCode(), 87654324, 0.00);
-        BusinessAccount JSBA = new BusinessAccount("Jon Smith", businessAccount.getSortCode(), 97531864, 10000.00, true);
+        CurrentAccount JSCA = new CurrentAccount("Jon Smith", currentAcc.getSortCode(), 87654321, 2000);
+        CurrentAccount BJCA = new CurrentAccount("Boris Johnson", currentAcc.getSortCode(), 87654324, 3000);
+        BusinessAccount JSBA = new BusinessAccount("Jon Smith", businessAccount.getSortCode(), 97531864, 3000, true);
         BusinessAccount BJBA = new BusinessAccount("Boris Johnson", businessAccount.getSortCode(), 95498621, 1000.0, true);
         ISAAccount JSISA = new ISAAccount("Jon Smith", isaAccount.getSortCode(), 12345678, 90.00);
         ISAAccount BJISA = new ISAAccount("Boris Johnson", isaAccount.getSortCode(), 99655642, 1000.0);
