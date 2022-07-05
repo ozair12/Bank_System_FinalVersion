@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 
 public class DataManagement {
@@ -5,6 +6,35 @@ public class DataManagement {
     protected static ArrayList<CurrentAccount> Currentacc = new ArrayList<>();
     protected static ArrayList<BusinessAccount> businessAccounts = new ArrayList<>();
     protected static ArrayList<ISAAccount> isaAccounts = new ArrayList<>();
+
+    public static  void WriteObjectToFile(ArrayList<Account> acc) {
+
+        try {
+
+            FileOutputStream writeData = new FileOutputStream("accData.ser");
+            ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
+            writeStream.writeObject(acc);
+            writeStream.flush();
+            writeStream.close();
+            System.out.println("The data  was successfully written to a file");
+
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static  ArrayList<Account> readDataObject() throws IOException, ClassNotFoundException {
+
+        FileInputStream readData = new FileInputStream("accData.ser");
+        ObjectInputStream readStream = new ObjectInputStream(readData);
+
+        ArrayList<Account> Acc = (ArrayList<Account>) readStream.readObject();
+        readStream.close();
+        //System.out.println("The data  was successfully read from file");
+        return Acc;
+
+    }
 
     public static void main(String[] args) {
         Account acc = new Account();

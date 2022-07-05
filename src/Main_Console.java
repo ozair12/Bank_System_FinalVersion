@@ -14,9 +14,9 @@ public class Main_Console {
     protected static ArrayList<BusinessAccount> businessAccounts = new ArrayList<>();
     protected static ArrayList<ISAAccount> isaAccounts = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-
+/*
         Account acc = new Account();
 
         CurrentAccount currentAcc = new CurrentAccount();
@@ -47,8 +47,12 @@ public class Main_Console {
 // method for calculating interest when 31 april is detected
        // Account.AddingInterest();
 
+
 // business charge method will activate when the date has been met
       //  Account.AnnualCharge();
+
+ */
+        ArrayList<Account>Acc= DataManagement.readDataObject();
 
         Scanner name = new Scanner(System.in);
 
@@ -59,6 +63,7 @@ public class Main_Console {
             System.out.println("Enter the account sort code");
             sortCode = name.next();
         }
+
         Scanner account = new Scanner(System.in);
 
         System.out.println("Enter the account number, must only be 8 digits");
